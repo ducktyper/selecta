@@ -806,7 +806,7 @@ class TTY < Struct.new(:console_file)
     while console_file.ready?
       input += console_file.getc
     end
-    input
+    input.gsub(/\[\d{3}~/, '')
   end
 
   def puts
