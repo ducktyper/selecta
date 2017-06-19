@@ -196,7 +196,7 @@ class Configuration < Struct.new(:height, :initial_search, :choices)
       end
 
       opts.on("-s", "--search SEARCH", "Specify an initial search string") do |search|
-        options[:search] = search
+        options[:search] = search.gsub('::', '')
       end
     end
 
